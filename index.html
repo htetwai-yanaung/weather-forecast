@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body onload="getWeather('Yangon')">
+    <div class="container">
+      <div class="search">
+        <input type="text" id="cityName" placeholder="City Name" />
+        <button onclick="search()"><i class="fas fa-search"></i></button>
+        <button onclick="dark()"><i class="fa-solid fa-moon"></i></button>
+      </div>
+      <div class="title">
+        <span id="city">Yangon</span>
+        <span id="day"><span class="day">Monday</span> 7:00 AM</span>
+      </div>
+      <div class="icon">
+        <img src="https://openweathermap.org/img/wn/09n@2x.png" alt="" />
+        <span id="desc">Sunny</span>
+      </div>
+      <div class="temperature">
+        <span id="temp"
+          ><i class="fa-solid fa-temperature-three-quarters"></i>
+          <span id="deg">22</span>&deg;C</span
+        >
+        <span id="time">GOOD MORNING</span>
+        <span id="toDay">September 5 2022</span>
+      </div>
+      <div class="footer">
+        <div class="speed">
+          <span>Wind</span>
+          <span id="speed">56km/h</span>
+        </div>
+        <div class="humidity">
+          <span>Humidity</span>
+          <span id="humi">66%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="loader">
+      <div class="inner-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </body>
+  <script src="js/script.js"></script>
+</html>
