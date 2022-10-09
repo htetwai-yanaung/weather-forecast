@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+:root{
+    --background-white: #ECF0F3;
+    --text-secondary-color: #666;
+    --text-primary-color: #000;
+    --box-shadow: 8px 8px 15px #D1D9E6,
+                  -8px -8px 15px #FFF;
+}
+
+body{
+    /* background: linear-gradient(to right, #AEE4FF, #6A9CFD); */
+    background: var(--background-white);
+}
+
+body.dark{
+    --background-white: #292D32;
+    --text-primary-color: #fff;
+    --text-secondary-color: #767676;
+    --box-shadow: 8px 8px 15px #000,
+                  -8px -8px 15px #585858;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.container .search input[type=text]{
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 7px 14px;
+    background: var(--background-white);
+    box-shadow: var(--box-shadow);
+}
+
+.container .search button{
+    padding: 7px;
+    margin-left: 10px;
+    font-size: 16px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    line-height: 16px;
+    border-radius: 50%;
+    background: var(--background-white);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.container .title{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .title #city{
+    font-size: 40px;
+    text-transform: capitalize;
+}
+
+input[type=text], button, #city, #desc, #temp, #time, .speed>span, .humidity>span{
+    color: var(--text-primary-color);
+}
+
+#day, #toDay, #speed, #humi{
+    color: var(--text-secondary-color);
+}
+
+.container .temperature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.container .icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .icon img{
+    background-color: var(--text-secondary-color);
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+}
+
+.container .icon #desc{
+    padding: 20px;
+    text-transform: capitalize;
+}
+
+.container .temperature #temp{
+    font-size: 40px;
+}
+
+.container .temperature #toDay{
+    color: var(--text-secondary-color);
+    font-size: small;
+}
+
+.container .footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container .footer .speed,
+.container .footer .humidity{
+    padding: 10px 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-secondary-color);
+}
+
+.container .footer .speed{
+    border-right: 1px solid var(--text-secondary-color);
+}
+
+.container .footer .humidity{
+    border-left: 1px solid var(--text-secondary-color);
+}
+
+/* .container .footer .speed #speed,
+.container .footer .humidity #humi{
+    color: black;
+} */
+
+
+
+
+
+
+.loader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ECF0F3;
+    top: 0;
+    left: 0;
+}
+
+.loader .inner-loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+}
+
+.loader span{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    animation: loading 2s ease infinite;
+}
+
+.loader span:nth-child(1){
+    background-color: #F8D90F;
+    animation-delay: .5s;
+}
+.loader span:nth-child(2){
+    background-color: #D3DD18;
+    animation-delay: 1s;
+}
+.loader span:nth-child(3){
+    background-color: #FE7A15;
+    animation-delay: 1.5s;
+}
+.loader span:nth-child(4){
+    background-color: #0191B4;
+    animation-delay: 2s;
+}
+
+@keyframes loading{
+    0%,100%{
+        transform: translate(0px);
+    }
+    25%{
+        transform: translate(80px);
+    }
+    50%{
+        transform: translate(80px, 80px);
+    }
+    75%{
+        transform: translate(0, 80px);
+    }
+}
+
+.loader.fadeOut{
+    animation: fadeOut 1s alternate;
+}
+
+@keyframes fadeOut{
+    to{
+        opacity: 0;
+    }
+}
